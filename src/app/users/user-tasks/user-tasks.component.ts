@@ -12,6 +12,7 @@ import { ActivatedRoute, RouterOutlet, RouterLink } from '@angular/router';
 export class UserTasksComponent implements OnInit{
   // userId = input.required<string>();
   userName = '';
+  message = input.required<string>()
   private usersService = inject(UsersService)
   private activatedRoute = inject(ActivatedRoute);
   private destroyRef = inject(DestroyRef);
@@ -19,6 +20,7 @@ export class UserTasksComponent implements OnInit{
   // userName = computed(() => this.usersService.users.find(u => u.id === this.userId())?.name);
 
   ngOnInit(): void {
+    console.log('Input Data: ', this.message())
     // observables you can subscribe to.
     console.log(this.activatedRoute)
     // a snapshot contains actual values but since its in ngOnInit here it will not be re-exectued
