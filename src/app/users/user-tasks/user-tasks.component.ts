@@ -19,7 +19,10 @@ export class UserTasksComponent implements OnInit{
   // userName = computed(() => this.usersService.users.find(u => u.id === this.userId())?.name);
 
   ngOnInit(): void {
+    // observables you can subscribe to.
     console.log(this.activatedRoute)
+    // a snapshot contains actual values but since its in ngOnInit here it will not be re-exectued
+    console.log(this.activatedRoute.snapshot.paramMap.get('userId'))
     const subscription = this.activatedRoute.paramMap.subscribe({
       next: (paramMap) => {
         this.userName = this.usersService.users.find(u => u.id === paramMap.get('userId'))?.name || ''
