@@ -4,6 +4,7 @@ import {
   // DestroyRef,
   inject,
   input,
+  OnInit,
   // OnInit,
 } from '@angular/core';
 import { UsersService } from '../users.service';
@@ -14,7 +15,8 @@ import {
   ResolveFn,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
-} from '@angular/router';
+  ActivatedRoute,
+} from '@angular/router'
 
 @Component({
   selector: 'app-user-tasks',
@@ -24,9 +26,21 @@ import {
   imports: [RouterOutlet, RouterLink],
 })
 export class UserTasksComponent {
-  // userId = input.required<string>();
   userName = input.required<string>();
   message = input.required<string>();
+
+  // private activatedRoute = inject(ActivatedRoute);
+
+  // Accessing Route Data In Components
+  // ngOnInit(): void {
+  //   this.activatedRoute.data.subscribe({
+  //     next: data => {
+  //       console.log(data)
+  //     }
+  //   })
+  // }
+
+  // userId = input.required<string>();
   // private usersService = inject(UsersService);
   // private activatedRoute = inject(ActivatedRoute);
   // private destroyRef = inject(DestroyRef);
